@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td>iPhone</td>
+    <td>iOS</td>
      <td>Android</td>
   </tr>
   <tr>
