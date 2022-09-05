@@ -26,6 +26,8 @@ object Versions {
     const val kotlinxSerializationCore = "1.3.3"
     const val kotlinxCoroutinesCore = "1.6.4"
     const val composeConstraintLayout = "1.0.1"
+    const val koinAnnotaions = "1.0.1"
+
 }
 
 object Libraries {
@@ -43,6 +45,8 @@ object Libraries {
     const val ktorNegotiaion = "io.ktor:ktor-client-content-negotiation:${Versions.ktor}"
     const val ktorAndroid = "io.ktor:ktor-client-android:${Versions.ktor}"
     const val koinCompose = "io.insert-koin:koin-androidx-compose:${Versions.koin}"
+    const val annotations = "io.insert-koin:koin-annotations:${Versions.koinAnnotaions}"
+    const val kspCompiler = "io.insert-koin:koin-ksp-compiler:${Versions.koinAnnotaions}"
 
 
     object Compose {
