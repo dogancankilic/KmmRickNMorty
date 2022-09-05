@@ -7,21 +7,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.LocalContentColor
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
@@ -58,29 +56,25 @@ fun MainLayout() {
 @Composable
 fun CharacterCard(character: CharacterUiModel) {
 
-    Surface(color = Color.White) {
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                character.name,
-                textAlign = TextAlign.Center,
-                style = MaterialTheme.typography.h5,
-                color = LocalContentColor.current,
-                modifier = Modifier.padding(vertical = 8.dp, horizontal = 16.dp)
-            )
-            AsyncImage(
-                model = character.image,
-                contentDescription = character.name,
-                contentScale = ContentScale.Fit,
-                modifier = Modifier
-                    .size(150.dp)
-                    .clip(RoundedCornerShape(20.dp))
-            )
-        }
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            character.name,
+            textAlign = TextAlign.Center,
+            color = LocalContentColor.current,
+            modifier = Modifier.padding(vertical = 8.dp, horizontal = 16.dp)
+        )
+        AsyncImage(
+            model = character.image,
+            contentDescription = character.name,
+            modifier = Modifier.size(300.dp)
+                .clip(RoundedCornerShape(20.dp))
+        )
     }
 }

@@ -2,12 +2,11 @@ plugins {
     kotlin("multiplatform")
     id("com.android.library")
     kotlin("plugin.serialization") version "1.7.10"
-
 }
 
 kotlin {
     android()
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -28,12 +27,11 @@ kotlin {
                 implementation(Libraries.koinCore)
                 implementation(Libraries.ktorNegotiaion)
                 implementation(Libraries.ktorSerializationJson)
+                implementation(Libraries.annotations)
             }
-
         }
         val commonTest by getting {
             dependencies {
-
             }
         }
         val androidMain by getting
@@ -46,7 +44,7 @@ kotlin {
             iosX64Main.dependsOn(this)
             iosArm64Main.dependsOn(this)
             iosSimulatorArm64Main.dependsOn(this)
-            dependencies{
+            dependencies {
                 implementation(Libraries.Ktor.ktorClient)
                 implementation(Libraries.ktorNegotiaion)
                 implementation(Libraries.ktorSerializationJson)
@@ -54,7 +52,6 @@ kotlin {
                 implementation(Libraries.Common.kotlinxSerializationCore)
                 implementation(Libraries.Common.kotlinxCoroutinesCore)
             }
-
         }
         val iosX64Test by getting
         val iosArm64Test by getting

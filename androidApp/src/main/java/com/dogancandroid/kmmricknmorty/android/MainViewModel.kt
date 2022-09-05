@@ -20,7 +20,7 @@ class MainViewModel(private val getCharacterUseCase: GetCharacterUseCase) : View
 
     fun getCharacter() = viewModelScope.launch {
 
-        when (val response = getCharacterUseCase.invoke("api/character/67")) {
+        when (val response = getCharacterUseCase.invoke("api/character/1")) {
             is ApiResult.Success -> {
                 _uiState.update {
                     UiState.Success(response.data)
